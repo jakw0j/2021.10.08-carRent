@@ -47,11 +47,11 @@ public class Car {
                 .append("Car{")
                 .append("brand = ")
                 .append(this.brand)
-                .append(" ,model = ")
+                .append(", model = ")
                 .append(this.model)
-                .append(" ,year = ")
+                .append(", year = ")
                 .append(this.year)
-                .append(" ,plate = ")
+                .append(", plate = ")
                 .append(this.plate);
 
         if(this.rent) {
