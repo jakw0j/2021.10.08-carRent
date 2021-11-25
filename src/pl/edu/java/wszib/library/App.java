@@ -41,11 +41,11 @@ public class App {
                         new BufferedReader(new InputStreamReader(System.in));
                 switch (br.readLine()) {
                     case "1":
-                        Gui.getInstance().listCars(Database.getInstance().getCars());
+                        Gui.getInstance().listCars(Database.getInstance().getBooks());
                         break;
                     case "2":
                         System.out.println("Title:");
-                        if(Database.getInstance().rentCar(br.readLine())) {
+                        if(Database.getInstance().rentBook(br.readLine())) {
                             System.out.println("Currently unavailable");
                         } else {
                             System.out.println("Invalid title or currenty unavailable");

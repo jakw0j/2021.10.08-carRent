@@ -14,19 +14,19 @@ public class Database {
     private static final Database instance = new Database();
 
     private Database() {
-        books.add(new Book("Toyota", "Corolla", "KR1", 2005));
-        books.add(new Book("Mercedes", "A", "KR2", 2005));
-        books.add(new Book("BMW", "3", "KR3", 2005));
-        books.add(new Book("Mazda", "5", "KR4", 2005));
+        books.add(new Book("Coaching", "Mark Newton", "Smile", 2005));
+        books.add(new Book("Productivity", "Andrew Jax", "Being here and now", 2005));
+        books.add(new Book("Autobiography", "Barack Obama", "Yes, we can", 2005));
+        books.add(new Book("True crime", "Donald Tusk", "My life as F1 driver", 2005));
 
         users.add(new User("alex", DigestUtils.md5Hex("alex")));
         users.add(new User("mark", DigestUtils.md5Hex("marek")));
         users.add(new User("carol", DigestUtils.md5Hex("carol")));
     }
 
-    public boolean rentCar(String plate) {
+    public boolean rentBook(String title) {
         for (Book book : this.books) {
-            if (book.getTitle().equals(plate) && !book.isRent()) {
+            if (book.getTitle().equals(title) && !book.isRent()) {
                 book.setRent(true);
                 return true;
             }
@@ -45,7 +45,7 @@ public class Database {
         return false;
     }
 
-    public List<Book> getCars() {
+    public List<Book> getBooks() {
         return books;
     }
 
