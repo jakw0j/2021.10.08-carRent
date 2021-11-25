@@ -16,7 +16,7 @@ public class Gui {
         System.out.println("3. Exit");
     }
 
-    public void listCars(List<Book> books) {
+    public void listBooks(List<Book> books) {
         for (Book book : books) {
             System.out.println(book);
         }

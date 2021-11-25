@@ -41,7 +41,7 @@ public class App {
                         new BufferedReader(new InputStreamReader(System.in));
                 switch (br.readLine()) {
                     case "1":
-                        Gui.getInstance().listCars(Database.getInstance().getBooks());
+                        Gui.getInstance().listBooks(Database.getInstance().getBooks());
                         break;
                     case "2":
                         System.out.println("Title:");
