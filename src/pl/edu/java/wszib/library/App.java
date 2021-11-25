@@ -1,8 +1,7 @@
-package pl.edu.java.wszib.car.rent;
+package pl.edu.java.wszib.library;
 
-import pl.edu.java.wszib.car.rent.database.Database;
-import pl.edu.java.wszib.car.rent.gui.Gui;
-import pl.edu.java.wszib.car.rent.model.Car;
+import pl.edu.java.wszib.library.database.Database;
+import pl.edu.java.wszib.library.gui.Gui;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,9 +15,9 @@ public class App {
             BufferedReader br =
                     new BufferedReader(new InputStreamReader(System.in));
             for(int i = 0; i < 3; i++) {
-                System.out.println("Podaj login:");
+                System.out.println("Login:");
                 String login = br.readLine();
-                System.out.println("Podaj haslo:");
+                System.out.println("Password:");
                 String pass = br.readLine();
 
                 success = Database.getInstance().authenticate(login, pass);
@@ -27,7 +26,7 @@ public class App {
                     success = true;
                     break;
                 } else {
-                    System.out.println("Nie prawidłowe dane !!");
+                    System.out.println("Incorrect data!");
                 }
             }
         } catch (IOException e) {
@@ -45,17 +44,17 @@ public class App {
                         Gui.getInstance().listCars(Database.getInstance().getCars());
                         break;
                     case "2":
-                        System.out.println("Podaj rejestrację:");
+                        System.out.println("Title:");
                         if(Database.getInstance().rentCar(br.readLine())) {
-                            System.out.println("Wypożyczono auto !!");
+                            System.out.println("Currently unavailable");
                         } else {
-                            System.out.println("Nieprawidłowa rejestracja lub auto jest zajęte !!");
+                            System.out.println("Invalid title or currenty unavailable");
                         }
                         break;
                     case "3":
                         return;
                     default:
-                        System.out.println("Nieprawidłowy wybór !!");
+                        System.out.println("Incorrect choice");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

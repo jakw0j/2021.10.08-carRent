@@ -1,4 +1,4 @@
-package pl.edu.java.wszib.car.rent.model;
+package pl.edu.java.wszib.library.model;
 
 public class User {
     private String login;
